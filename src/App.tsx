@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import About from "./pages/About";
+import LibraryList from "./pages/LibraryList";
+import LibraryDetail from "./pages/LibraryDetail";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Login from "./pages/Login";
+import "./App.css";
 
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/libraries" element={<LibraryList />} />
+            <Route path="/library/:id" element={<LibraryDetail />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="*"
+              element={
+                <div className="not-found">
+                  <h1>404 - Sahifa topilmadi</h1>
+                  <p>Kechirasiz, siz qidirayotgan sahifa mavjud emas.</p>
+                </div>
+              }
+            />
+          </Routes>
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;
