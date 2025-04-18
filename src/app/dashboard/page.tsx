@@ -13,7 +13,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-emerald-50 to-sky-100 p-6">
+    <div className="flex justify-center items-center  bg-gradient-to-br from-emerald-50 to-sky-100 p-6">
       <div className="bg-white border border-emerald-100 shadow-lg px-7 py-8 rounded-2xl w-[380px] text-center transition-all duration-300">
         <h1 className="text-2xl font-bold text-emerald-600 mb-3">Foydalanuvchi Paneli</h1>
         <h2 className="text-base font-medium text-gray-700 mb-4">Kutubxonamizga hush kelibsiz!</h2>

@@ -21,7 +21,7 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br  ">
       <div className="bg-white shadow-2xl p-8 rounded-xl w-96 max-w-md border border-gray-200">
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
           Kirish

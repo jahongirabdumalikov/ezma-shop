@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 function useFetch<T>(url: string) {
-  const [data, setData] = useState<T | null>(null); 
-  const [error, setError] = useState<string>(''); 
-  const [loading, setLoading] = useState<boolean>(false); 
+  const [data, setData] = useState<T | null>(null);
+  const [error, setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
   const [statusofuser, SetStatusOfUser] = useState<boolean>(false);
   const [can_rent_books, SetCanRentaBook] = useState<boolean>(false);
   const [location, SetLocation] = useState<string>('');
@@ -28,7 +28,7 @@ function useFetch<T>(url: string) {
 
       const res = await axios.get(baseUrl + url, {
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
       });
@@ -56,7 +56,16 @@ function useFetch<T>(url: string) {
     Geteverythink();
   }, [url]);
 
-  return { loading, error, data, statusofuser, can_rent_books, SetStatusOfUser, location, length };
+  return {
+    loading,
+    error,
+    data,
+    statusofuser,
+    can_rent_books,
+    SetStatusOfUser,
+    location,
+    length,
+  };
 }
 
 export default useFetch;
